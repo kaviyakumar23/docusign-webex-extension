@@ -28,10 +28,3 @@ export class ModelManagerUtil {
     }
   }
 }
-
-// Helper function to get the current file's directory
-export function getCurrentDir() {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = dirname(__filename);
-  return __dirname;
-}
