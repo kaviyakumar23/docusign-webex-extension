@@ -1,0 +1,112 @@
+{
+  "id": "247a173d-de4d-4e7d-a388-387995da8c6d",
+  "name": "Webex",
+  "description": {
+    "short": "Schedule Webex meetings directly from DocuSign workflows",
+    "long": "Streamline your meeting scheduling process by creating Webex meetings directly within your DocuSign workflows. This extension enables you to automatically schedule virtual meetings between two participants without leaving the DocuSign environment."
+  },
+  "termsOfServiceUrl": "https://www.samplecompany.com/tos",
+  "privacyUrl": "https://www.samplecompany.com/privacy-security",
+  "supportUrl": "https://www.samplecompany.com/support",
+  "publisher": {
+    "name": "SheCodes",
+    "email": "kaviyakumar23@gmail.com"
+  },
+  "connections": [
+    {
+      "id": "907ebfb5-eb8c-485a-a6ed-62a0952ad3eb",
+      "name": "Webex Meet Connection",
+      "description": "Secure OAuth2 connection to Webex API for scheduling meetings",
+      "type": "oauth2",
+      "params": {
+        "provider": "CUSTOM",
+        "clientId": "Cc3e3ec200d8c60b975c9fb1fbdcc37321c6f386008cfc6885059a3f3229bfa6a",
+        "clientSecret": "[omitted]",
+        "scopes": ["meeting:schedules_write"],
+        "customConfig": {
+          "authorizationMethod": "header",
+          "authorizationParams": {
+            "prompt": "consent",
+            "access_type": "offline"
+          },
+          "authorizationUrl": "https://webexapis.com/v1/authorize",
+          "requiredScopes": [],
+          "scopeSeparator": " ",
+          "tokenUrl": "https://webexapis.com/v1/access_token",
+          "refreshScopes": []
+        }
+      }
+    }
+  ],
+  "icon": {
+    "data": "[omitted]",
+    "mediaType": "image/png",
+    "id": "fefd710d-647a-4487-83d5-5ba7131ca977"
+  },
+  "screenshots": [],
+  "extensions": [
+    {
+      "name": "Webex Read and Data Write Extension",
+      "description": "Used to create a meeting between participants.",
+      "template": "DataIO.Version6.DataInputOutput",
+      "actionReferences": [
+        "List Meetings",
+        "Get Types",
+        "Update Record",
+        "Create Meeting",
+        "Get Type Definition"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "List Meetings",
+      "description": "This is a description of my SearchRecords action",
+      "template": "DataIO.Version6.SearchRecords",
+      "connectionsReference": "Webex Meet Connection",
+      "params": {
+        "uri": "https://www.samplecompany.com/api/dataio/searchRecords"
+      }
+    },
+    {
+      "name": "Get Types",
+      "description": "This is a description of my GetTypeNames action",
+      "template": "DataIO.Version6.GetTypeNames",
+      "connectionsReference": "Webex Meet Connection",
+      "params": {
+        "uri": "https://4494-223-185-22-211.ngrok-free.app/api/types/names"
+      }
+    },
+    {
+      "name": "Update Record",
+      "description": "This is a description of my PatchRecord action",
+      "template": "DataIO.Version6.PatchRecord",
+      "connectionsReference": "Webex Meet Connection",
+      "params": {
+        "uri": "https://4494-223-185-22-211.ngrok-free.app/api/webex/update"
+      }
+    },
+    {
+      "name": "Create Meeting",
+      "description": "This is a description of my CreateRecord action",
+      "template": "DataIO.Version6.CreateRecord",
+      "connectionsReference": "Webex Meet Connection",
+      "params": {
+        "uri": "https://4494-223-185-22-211.ngrok-free.app/api/webex/create"
+      }
+    },
+    {
+      "name": "Get Type Definition",
+      "description": "This is a description of my GetTypeDefinitions action",
+      "template": "DataIO.Version6.GetTypeDefinitions",
+      "connectionsReference": "Webex Meet Connection",
+      "params": {
+        "uri": "https://4494-223-185-22-211.ngrok-free.app/api/types/definitions"
+      }
+    }
+  ],
+  "signupUrl": "https://www.samplecompany.com/signup",
+  "changelog": "",
+  "publicationRegions": ["US"],
+  "distribution": "PRIVATE"
+}

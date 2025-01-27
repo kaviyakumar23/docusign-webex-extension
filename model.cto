@@ -1,0 +1,33 @@
+namespace org.webex@1.0.0
+
+@Term("Meeting")
+@Crud("Createable,Readable")
+concept Meeting identified by id {
+  @Term("Meeting ID")
+  @Crud("Readable")
+  o String id
+
+  @Term("First Participant Email")
+  @Crud("Createable,Readable")
+  o String email1
+
+  @Term("Second Participant Email")
+  @Crud("Createable,Readable")
+  o String email2
+
+  @Term("Meeting Title")
+  @Crud("Createable,Readable")
+  o String title optional
+
+  @Term("Start Time")
+  @Crud("Createable,Readable")
+  o String start optional
+
+  @Term("End Time")
+  @Crud("Createable,Readable")
+  o String end optional
+
+  @Term("Meeting Link")
+  @Crud("Readable")
+  o String webLink optional
+}
